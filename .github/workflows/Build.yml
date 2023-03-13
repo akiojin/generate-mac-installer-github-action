@@ -19,5 +19,5 @@ jobs:
         with:
           root-directory: Artifacts
           bundle-path: Build.app
-          indentifier: com.akiojin.GitHubActionsForUnity
+          identifier: com.akiojin.GitHubActionsForUnity
           version: ${{ github.run_number }}
