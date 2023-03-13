@@ -22,8 +22,9 @@ inputs:
   version:
     description: >
       Specifies the version of the package to be created.
+      If omitted, github.run_numer is set.
     required: true
-    default: 1.0
+    default: ${{ github.run_numer }}
   install-location:
     description: >
       The directory where the package is to be installed.

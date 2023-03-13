@@ -10,10 +10,7 @@ This action creates an installer (.pkg) for macOS.
     root-directory: Build
     bundle-path: Build.app
     identifier: com.akiojin.GitHubActionsForUnity
-    version: 
 ```
-
-### Simple usage
 
 ## Arguments
 
