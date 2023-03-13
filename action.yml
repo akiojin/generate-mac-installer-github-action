@@ -1,4 +1,4 @@
-name: 'generate-mac-installer-github-action'
+name: 'Generate macOS Installer'
 description: 'This action creates an installer (.pkg) for macOS.'
 inputs:
   output-directory:
