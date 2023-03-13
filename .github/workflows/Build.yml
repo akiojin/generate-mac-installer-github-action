@@ -1,13 +1,10 @@
-name: Build
+name: Build & Test
 
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
-  Build:
-    runs-on: ubuntu-latest
+  Build-And-Test:
+    runs-on: macos-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
@@ -16,3 +13,11 @@ jobs:
           node-version: 16
       - run: npm install
       - run: npx @vercel/ncc build src/main.ts
+
+      - uses: ./
+        id: mac-installer
+        with:
+          root-directory: Artifacts
+          bundle-path: Build.app
+          indentifier: com.akiojin.GitHubActionsForUnity
+          version: ${{ github.run_number }}
