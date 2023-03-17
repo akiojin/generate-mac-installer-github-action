@@ -3,17 +3,22 @@ name: Build & Test
 on: push
 
 jobs:
-  Build-And-Test:
-    runs-on: macos-latest
+  Build:
+    runs-on: ubuntu-latest
     timeout-minutes: 5
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm install
-      - run: npx @vercel/ncc build src/main.ts
+      - run: npm run build
 
+  Test:
+    runs-on: macos-latest
+    timeout-minutes: 5
+
+    steps:
       - uses: ./
         id: mac-installer
         with:
