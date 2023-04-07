@@ -10,7 +10,7 @@ inputs:
   root-directory:
     description: >
       The root path of the directory containing the set of resources to be bundled.
-    requreied: true
+    required: true
   bundle-path:
     description: >
       Specify the relative path of *.app to be placed under the directory specified in 'root-directory' as the base point.
