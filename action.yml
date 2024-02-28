@@ -36,7 +36,7 @@ outputs:
     description: >
       The output path of the package.
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
 branding:
   icon: "box"
