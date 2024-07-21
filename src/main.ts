@@ -22,7 +22,12 @@ async function ExportPKG(): Promise<void>
         .Append('--identifier', core.getInput('identifier'))
         .Append('--version', core.getInput('version'))
         .Append('--install-location', core.getInput('install-location'))
-        .Append(outputPath)
+
+    if (core.getInput('scripts-directory') !== '') {
+        builder.Append('--scripts', core.getInput('scripts-directory'))
+    }
+
+    builder.Append(outputPath)
 
     core.setOutput('output-path', outputPath)
     core.info(`Output Path: ${outputPath}`)

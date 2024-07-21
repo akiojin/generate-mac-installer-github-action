@@ -558,7 +558,7 @@ class OidcClient {
                 .catch(error => {
                 throw new Error(`Failed to get ID Token. \n 
         Error Code : ${error.statusCode}\n 
-        Error Message: ${error.result.message}`);
+        Error Message: ${error.message}`);
             });
             const id_token = (_a = res.result) === null || _a === void 0 ? void 0 : _a.value;
             if (!id_token) {
@@ -8770,8 +8770,11 @@ async function ExportPKG() {
         .Append('--component-plist', plist)
         .Append('--identifier', core.getInput('identifier'))
         .Append('--version', core.getInput('version'))
-        .Append('--install-location', core.getInput('install-location'))
-        .Append(outputPath);
+        .Append('--install-location', core.getInput('install-location'));
+    if (core.getInput('scripts-directory') !== '') {
+        builder.Append('--scripts', core.getInput('scripts-directory'));
+    }
+    builder.Append(outputPath);
     core.setOutput('output-path', outputPath);
     core.info(`Output Path: ${outputPath}`);
     await exec.exec('pkgbuild', builder.Build());

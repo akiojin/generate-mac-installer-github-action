@@ -24,6 +24,7 @@ This action creates an installer (.pkg) for macOS.
 | `identifier`       | `true`   | `string` |               | Specify the application ID.                                                                                          |
 | `version`          | `true`   | `string` | 1.0           | Specifies the version of the package to be created.                                                                  |
 | `install-location` | `false`  | `string` | /Applications | The directory where the package is to be installed. If omitted, '/Applications' is specified.                        |
+| `script-directory` | `false`  | `string` |               | The directory containing installation scripts (e.g. preinstall/postinstall) passed to the `--scripts` argument of `pkgbuild`. If omitted, `--scripts` is not passed. |
 
 ### Outputs
 
