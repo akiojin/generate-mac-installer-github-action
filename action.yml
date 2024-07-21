@@ -31,12 +31,17 @@ inputs:
       If omitted, '/Applications' is specified.
     required: false
     default: /Applications
+  scripts-directory:
+    description: >
+      The directory passed to --scripts, e.g. for preinstall and postinstall.
+      If omitted, --script is not passed.
+    required: false
 outputs:
   output-path:
     description: >
       The output path of the package.
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
 branding:
   icon: "box"
