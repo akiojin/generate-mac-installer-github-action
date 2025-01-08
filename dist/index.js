@@ -4504,8 +4504,11 @@ async function ExportPKG() {
         .Append('--component-plist', plist)
         .Append('--identifier', core.getInput('identifier'))
         .Append('--version', core.getInput('version'))
-        .Append('--install-location', core.getInput('install-location'))
-        .Append(outputPath);
+        .Append('--install-location', core.getInput('install-location'));
+    if (core.getInput('scripts-directory') !== '') {
+        builder.Append('--scripts', core.getInput('scripts-directory'));
+    }
+    builder.Append(outputPath);
     core.setOutput('output-path', outputPath);
     core.info(`Output Path: ${outputPath}`);
     await exec.exec('pkgbuild', builder.Build());
