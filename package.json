@@ -1,6 +1,6 @@
 {
   "name": "@akiojin/generate-mac-installer-github-action",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This action creates an installer (.pkg) for macOS.",
   "main": "dist/index.js",
   "scripts": {
